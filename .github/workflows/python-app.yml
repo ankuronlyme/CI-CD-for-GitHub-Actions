@@ -53,3 +53,13 @@ jobs:
           # Add deployment steps for staging environment
           echo "Deploying to Staging environment"
 
+  deploy-to-production:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Production
+        if: github.event_name == 'release' && github.ref == 'refs/tags/*'
+        run: |
+          # Add deployment steps for production environment
+          echo "Deploying to Production environment"
