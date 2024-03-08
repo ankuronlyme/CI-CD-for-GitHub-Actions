@@ -1,4 +1,4 @@
-name: Flask application
+name: Flask Application
 
 on:
   push:
