@@ -40,3 +40,17 @@ jobs:
         if: success()
         run: |
           echo "Build successful!"
+
+
+    deploy-to-staging:
+    needs: build
+      runs-on: 
+        ubuntu-latest
+
+    steps:
+      - name: Deploy to Staging
+        if: github.ref == 'refs/heads/staging'
+        run: |
+          # Add deployment steps for staging environment
+          echo "Deploying to Staging environment"
+
