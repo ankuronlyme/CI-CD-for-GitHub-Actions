@@ -42,12 +42,11 @@ jobs:
           echo "Build successful!"
 
 
-    deploy-to-staging:
-    needs: build
-      runs-on: 
-        ubuntu-latest
+  deploy-to-staging:
+      needs: build
+      runs-on: ubuntu-latest
 
-    steps:
+      steps:
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/staging'
         run: |
